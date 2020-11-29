@@ -14,4 +14,4 @@ jobs:
       - name: Expose useful environment variables
         uses: FranzDiebold/github-env-vars-action@v1.3.0
       - name: Tag docker image
-        run: echo "Docker image tag: registry/owner/repo/image:${GITHUB_REF_NAME}"
+        run: echo "Docker image tag is registry/owner/repo/image:${GITHUB_REF_NAME}"
