@@ -1,0 +1,17 @@
+name: cicd
+
+on:
+  pull_request:
+  push:
+    branches: [alpha, main]
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
+
+jobs:
+  checkout_refs:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Expose useful environment variables
+        uses: FranzDiebold/github-env-vars-action@v1.3.0
+      - name: Tag docker image
+        run: echo "Docker image tag: registry/owner/repo/image:${GITHUB_REF_NAME}"
