@@ -3,9 +3,8 @@ name: cicd
 on:
   pull_request:
   push:
-    branches: [alpha, main]
+    branches: 
     tags:
-      - v[0-9]+.[0-9]+.[0-9]+
 
 jobs:
   checkout_refs:
